@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Matías Pirrone Bruni - Programador Junior especializado en Java, Backend y desarrollo asistido por IA. Certificado en Claude Code por Anthropic. Buscando primeras oportunidades en Madrid." />
+  <meta name="author" content="Matías Pirrone Bruni" />
+  <meta name="keywords" content="Programador Junior, Java, Android, Backend, Claude Code, IA, Madrid, DAM, MySQL, Linux" />
+
+  <!-- Open Graph (para cuando compartas la URL) -->
+  <meta property="og:title" content="Matías Pirrone Bruni - Programador Junior" />
+  <meta property="og:description" content="Java · Backend · MySQL · Linux · Desarrollo asistido por IA (Claude Code)" />
+  <meta property="og:type" content="website" />
+
+  <title>Matías Pirrone Bruni - Programador Junior</title>
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Font Awesome (iconos) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  <!-- Estilos propios -->
+  <link href="styles.css" rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- ============================================================ -->
+  <!-- NAVEGACIÓN                                                   -->
+  <!-- ============================================================ -->
+  <nav class="navbar navbar-expand-lg sticky-top" id="navbar">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#hero">
+        <span class="accent">&lt;/&gt;</span> Matías Pirrone
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#sobre-mi">Sobre mí</a></li>
+          <li class="nav-item"><a class="nav-link" href="#habilidades">Habilidades</a></li>
+          <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#formacion">Formación</a></li>
+          <li class="nav-item"><a class="nav-link" href="#experiencia">Experiencia</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================ -->
+  <!-- HERO                                                         -->
+  <!-- ============================================================ -->
+  <section id="hero" class="hero-section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-7 order-lg-1 order-2">
+          <p class="hero-eyebrow">
+            <span class="accent">$</span> whoami
+          </p>
+          <h1 class="hero-title">
+            Matías Pirrone Bruni
+          </h1>
+          <p class="hero-subtitle">
+            Programador Junior · Java · Android · Backend · MySQL · Linux
+          </p>
+          <p class="hero-tagline">
+            Certificado en Claude Code por Anthropic — aplicando IA como amplificador de productividad en desarrollo.
+          </p>
+          <div class="hero-buttons">
+            <a href="assets/CV-Matias-Pirrone.pdf" download class="btn btn-accent">
+              <i class="fa-solid fa-file-arrow-down"></i> Descargar CV
+            </a>
+            <a href="mailto:matipn02@gmail.com" class="btn btn-outline-light">
+              <i class="fa-solid fa-envelope"></i> Contactar
+            </a>
+            <a href="https://linkedin.com/in/matiaspirrone" target="_blank" rel="noopener" class="btn btn-icon" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/matipirro" target="_blank" rel="noopener" class="btn btn-icon" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+          </div>
+          <p class="hero-location">
+            <i class="fa-solid fa-location-dot"></i> Leganés (Comunidad de Madrid) · Disponible presencial, híbrido o remoto
+          </p>
+        </div>
+        <div class="col-lg-5 order-lg-2 order-1 text-center">
+          <div class="hero-photo-wrapper">
+            <img src="assets/img/foto-perfil.jpeg" alt="Foto de Matías Pirrone" class="hero-photo" />
+            <span class="hero-photo-tag">#OpenToWork</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- SOBRE MÍ                                                     -->
+  <!-- ============================================================ -->
+  <section id="sobre-mi" class="section">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="accent">01.</span> Sobre mí
+      </h2>
+      <div class="row">
+        <div class="col-lg-8">
+          <p class="lead-text">
+            Soy Matías Pirrone, programador junior con formación en <strong>Desarrollo de Aplicaciones Multiplataforma (DAM)</strong> por el CIFP Federica Montseny (Madrid). Mi Trabajo Fin de Grado fue una aplicación Android nativa completa desarrollada extremo a extremo: cliente móvil en Java, backend con JDBC, base de datos MySQL y despliegue sobre un servidor Linux propio en OVH con SSH, UFW y Fail2Ban.
+          </p>
+          <p class="lead-text">
+            Estoy <strong>certificado en Claude Code in Action por Anthropic</strong> y utilizo la IA como amplificador de productividad en mi día a día: hooks personalizados, integración de MCPs y construcción de agentes con el Claude Agent SDK. Creo firmemente que el desarrollo moderno consiste en combinar el criterio humano con la capacidad de la IA, y en aprender rápido cuando el proyecto lo requiere.
+          </p>
+          <p class="lead-text">
+            Busco mi primera oportunidad profesional como <strong>desarrollador backend, junior full-stack o consultor IT junior con foco en IA</strong> en la Comunidad de Madrid. Estoy abierto a modalidad presencial, híbrida o remota.
+          </p>
+        </div>
+        <div class="col-lg-4">
+          <div class="info-card">
+            <h3 class="info-card-title">Datos rápidos</h3>
+            <ul class="info-list">
+              <li><i class="fa-solid fa-graduation-cap"></i> DAM · CIFP Federica Montseny</li>
+              <li><i class="fa-solid fa-briefcase"></i> 4 meses de prácticas profesionales</li>
+              <li><i class="fa-solid fa-language"></i> Inglés B2 · Español nativo</li>
+              <li><i class="fa-solid fa-house"></i> Leganés, Madrid</li>
+              <li><i class="fa-solid fa-car"></i> Carnet B de conducir</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- HABILIDADES                                                  -->
+  <!-- ============================================================ -->
+  <section id="habilidades" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="accent">02.</span> Habilidades técnicas
+      </h2>
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-4">
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fa-solid fa-code"></i></div>
+            <h3>Lenguajes</h3>
+            <div class="skill-tags">
+              <span class="tag">Java</span>
+              <span class="tag">SQL</span>
+              <span class="tag">HTML5</span>
+              <span class="tag">CSS3</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">PHP</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fa-solid fa-database"></i></div>
+            <h3>Bases de datos</h3>
+            <div class="skill-tags">
+              <span class="tag">MySQL</span>
+              <span class="tag">MariaDB</span>
+              <span class="tag">JDBC</span>
+              <span class="tag">JPA/Hibernate</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+            <h3>Desarrollo móvil</h3>
+            <div class="skill-tags">
+              <span class="tag">Android SDK</span>
+              <span class="tag">Android Studio</span>
+              <span class="tag">API 33</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fa-solid fa-server"></i></div>
+            <h3>Sistemas y DevOps</h3>
+            <div class="skill-tags">
+              <span class="tag">Linux (Debian)</span>
+              <span class="tag">VPS OVH</span>
+              <span class="tag">SSH</span>
+              <span class="tag">UFW</span>
+              <span class="tag">Fail2Ban</span>
+              <span class="tag">Git</span>
+              <span class="tag">GitHub</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="skill-card highlight-card">
+            <div class="skill-icon"><i class="fa-solid fa-robot"></i></div>
+            <h3>IA / AI-Assisted Dev</h3>
+            <div class="skill-tags">
+              <span class="tag tag-accent">Claude Code</span>
+              <span class="tag tag-accent">Claude Agent SDK</span>
+              <span class="tag tag-accent">MCPs</span>
+              <span class="tag">Prompt Engineering</span>
+              <span class="tag">Hooks personalizados</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="skill-card">
+            <div class="skill-icon"><i class="fa-solid fa-people-group"></i></div>
+            <h3>Metodologías</h3>
+            <div class="skill-tags">
+              <span class="tag">Scrum</span>
+              <span class="tag">Kanban</span>
+              <span class="tag">Trabajo en equipo</span>
+              <span class="tag">Revisión de código</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- PROYECTOS                                                    -->
+  <!-- ============================================================ -->
+  <section id="proyectos" class="section">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="accent">03.</span> Proyectos
+      </h2>
+
+      <!-- Proyecto RoomReady -->
+      <div class="project-card">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-5">
+            <div class="project-image">
+              <i class="fa-solid fa-hotel"></i>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <p class="project-label">Trabajo Fin de Grado · Junio 2024</p>
+            <h3 class="project-title">RoomReady</h3>
+            <p class="project-subtitle">Aplicación Android nativa para reserva de hoteles</p>
+            <p class="project-description">
+              App móvil completa desarrollada extremo a extremo como TFG del ciclo DAM. Tres tipos de usuario (invitado, cliente, director) con funcionalidades diferenciadas. Backend Java conectado por JDBC a MySQL sobre servidor Linux propio en OVH con SSH, UFW, Fail2Ban y notificaciones Pushover para accesos.
+            </p>
+            <p class="project-role">
+              <strong>Mi rol:</strong> responsable principal del sistema de favoritos end-to-end (modelo, JDBC, adapter, fragment) y de la vista de detalle de hotel. Colaboración con Alejandro Berzal y Borja Gavilán bajo metodología Scrum. Cumplimiento GDPR y AEPD.
+            </p>
+            <div class="project-tech">
+              <span class="tag">Java</span>
+              <span class="tag">Android</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">JDBC</span>
+              <span class="tag">Linux</span>
+              <span class="tag">SSH</span>
+              <span class="tag">Scrum</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/matipirro/roomready" target="_blank" rel="noopener" class="btn btn-accent-sm">
+                <i class="fa-brands fa-github"></i> Ver en GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto Claude Code -->
+      <div class="project-card">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-5">
+            <div class="project-image project-image-alt">
+              <i class="fa-solid fa-robot"></i>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <p class="project-label">Certificación · Junio 2026</p>
+            <h3 class="project-title">Claude Code in Action</h3>
+            <p class="project-subtitle">Curso oficial de Anthropic sobre desarrollo asistido por IA</p>
+            <p class="project-description">
+              Formación completa sobre integración de IA en el flujo de desarrollo con Claude Code (CLI), MCPs (Model Context Protocol) y el Claude Agent SDK. Configuración de hooks personalizados (PreToolUse/PostToolUse), buenas prácticas de seguridad (gestión de permisos, denegación de rutas sensibles) y construcción de agentes propios.
+            </p>
+            <p class="project-role">
+              <strong>Aplicación práctica:</strong> uso Claude Code como amplificador de productividad en mi desarrollo diario, permitiéndome iterar rápido y aprender nuevas tecnologías con velocidad mucho mayor.
+            </p>
+            <div class="project-tech">
+              <span class="tag tag-accent">Claude Code</span>
+              <span class="tag tag-accent">MCPs</span>
+              <span class="tag tag-accent">Agent SDK</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">CLI</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- FORMACIÓN                                                    -->
+  <!-- ============================================================ -->
+  <section id="formacion" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="accent">04.</span> Formación
+      </h2>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <p class="timeline-date">Junio 2026</p>
+            <h3 class="timeline-title">Certificado Claude Code in Action</h3>
+            <p class="timeline-org">Anthropic</p>
+            <p class="timeline-description">
+              Curso oficial sobre desarrollo asistido por IA con Claude Code, MCPs y Agent SDK.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <p class="timeline-date">2021 — 2024</p>
+            <h3 class="timeline-title">Grado Superior FP · Desarrollo de Aplicaciones Multiplataforma (DAM)</h3>
+            <p class="timeline-org">CIFP Federica Montseny · Madrid</p>
+            <p class="timeline-description">
+              Formación integral en programación orientada a objetos, bases de datos, desarrollo Android, servicios web y metodologías ágiles. TFG: RoomReady.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <p class="timeline-date">2018 — 2020</p>
+            <h3 class="timeline-title">Grado Medio FP · Sistemas Microinformáticos y Redes (SMR)</h3>
+            <p class="timeline-org">Madrid</p>
+            <p class="timeline-description">
+              Fundamentos de sistemas operativos, redes, hardware y soporte técnico.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- EXPERIENCIA                                                  -->
+  <!-- ============================================================ -->
+  <section id="experiencia" class="section">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="accent">05.</span> Experiencia
+      </h2>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <p class="timeline-date">Marzo — Junio 2024</p>
+            <h3 class="timeline-title">Prácticas profesionales · Desarrollo Java</h3>
+            <p class="timeline-org">Gomez Group Metering · Madrid</p>
+            <p class="timeline-description">
+              Prácticas del ciclo DAM en un entorno de desarrollo Java real. Colaboración en proyectos internos aplicando lo aprendido en formación y adquiriendo experiencia en el flujo de trabajo profesional.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <p class="timeline-date">Anual</p>
+            <h3 class="timeline-title">Personal de servicio · Mutua Madrid Open</h3>
+            <p class="timeline-org">Torneo ATP · Madrid</p>
+            <p class="timeline-description">
+              Colaboración en el mayor evento tenístico de la ciudad. Trabajo en equipo, atención al público y capacidad de respuesta bajo presión.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- CONTACTO                                                     -->
+  <!-- ============================================================ -->
+  <section id="contacto" class="section section-contact">
+    <div class="container text-center">
+      <h2 class="section-title text-center">
+        <span class="accent">06.</span> Contacto
+      </h2>
+      <p class="contact-lead">
+        Estoy abierto a oportunidades laborales, colaboraciones o simplemente conversar sobre desarrollo y IA.
+      </p>
+      <p class="contact-lead">
+        La mejor forma de contactar conmigo es por email o LinkedIn.
+      </p>
+      <div class="contact-buttons">
+        <a href="mailto:matipn02@gmail.com" class="btn btn-accent btn-lg">
+          <i class="fa-solid fa-envelope"></i> matipn02@gmail.com
+        </a>
+        <a href="https://linkedin.com/in/matiaspirrone" target="_blank" rel="noopener" class="btn btn-outline-light btn-lg">
+          <i class="fa-brands fa-linkedin"></i> LinkedIn
+        </a>
+        <a href="https://github.com/matipirro" target="_blank" rel="noopener" class="btn btn-outline-light btn-lg">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
+  <!-- FOOTER                                                       -->
+  <!-- ============================================================ -->
+  <footer class="footer">
+    <div class="container text-center">
+      <p class="footer-text">
+        Construido con <i class="fa-solid fa-heart accent"></i> por Matías Pirrone Bruni · 2026
+      </p>
+      <p class="footer-text-small">
+        HTML5 · CSS3 · Bootstrap 5 · Desplegado con GitHub Pages
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Smooth scroll para anchors internos -->
+  <script>
+    // Añade una clase "scrolled" al navbar cuando se hace scroll
+    window.addEventListener('scroll', function() {
+      const navbar = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script>
+
+</body>
+</html>

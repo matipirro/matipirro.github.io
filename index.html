@@ -244,6 +244,80 @@
         <span class="accent">03.</span> Proyectos
       </h2>
 
+      <!-- Proyecto Task Manager API Python (NUEVO - destacado) -->
+      <div class="project-card">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-5">
+            <div class="project-image project-image-alt">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <p class="project-label">Proyecto individual · Octubre 2026</p>
+            <h3 class="project-title">Task Manager API · Python + Claude AI</h3>
+            <p class="project-subtitle">REST API con FastAPI, PostgreSQL dockerizado, CI/CD y endpoint integrado con la API de Anthropic</p>
+            <p class="project-description">
+              API REST completa en Python 3.14 construida con FastAPI y arquitectura en capas (endpoints, repository, models, infraestructura) siguiendo principios SOLID. Persistencia con SQLAlchemy 2.0 en modo dual: PostgreSQL 16 dockerizado o SQLite para desarrollo local, siguiendo 12-Factor App. Containerización con Dockerfile + docker-compose y pipeline CI/CD en GitHub Actions con badge en el README.
+            </p>
+            <p class="project-role">
+              <strong>Integración de IA en producción:</strong> endpoint <code>POST /tasks/{id}/suggest</code> que invoca Claude Haiku 4.5 vía Anthropic SDK para generar subtareas automáticamente, con manejo de errores y tests mockeados para no consumir tokens en CI. 22 tests automatizados con pytest, TestClient y unittest.mock cubriendo CRUD, códigos de error y test end-to-end.
+            </p>
+            <div class="project-tech">
+              <span class="tag tag-accent">Python 3.14</span>
+              <span class="tag tag-accent">FastAPI</span>
+              <span class="tag tag-accent">Anthropic SDK</span>
+              <span class="tag">SQLAlchemy 2.0</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Docker Compose</span>
+              <span class="tag">GitHub Actions</span>
+              <span class="tag">Pytest</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/matipirro/taskmanager-python" target="_blank" rel="noopener" class="btn btn-accent-sm">
+                <i class="fa-brands fa-github"></i> Ver en GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto Task Manager Java Spring Boot (NUEVO) -->
+      <div class="project-card">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-5">
+            <div class="project-image">
+              <i class="fa-solid fa-mug-hot"></i>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <p class="project-label">Proyecto individual · Julio 2026</p>
+            <h3 class="project-title">Task Manager API · Spring Boot</h3>
+            <p class="project-subtitle">REST API con Spring Boot 3.5, Java 21 y suite de tests JUnit + Mockito</p>
+            <p class="project-description">
+              API REST end-to-end construida con Spring Boot 3.5 y Java 21 siguiendo el patrón estándar en capas (entity, repository, service, controller). CRUD completo con códigos HTTP semánticamente correctos (200, 201, 204, 404), serialización JSON con Jackson, capa de servicios, excepciones personalizadas, manejo centralizado con <code>@RestControllerAdvice</code> y documentación interactiva con Swagger / OpenAPI.
+            </p>
+            <p class="project-role">
+              <strong>Testing profesional:</strong> 15 tests unitarios e integración con JUnit 5, Mockito, AssertJ y MockMvc (<code>@WebMvcTest</code>). Separación clara entre tests de controlador y de servicio para probar cada capa de forma aislada.
+            </p>
+            <div class="project-tech">
+              <span class="tag">Java 21</span>
+              <span class="tag">Spring Boot 3.5</span>
+              <span class="tag">Spring Data JPA</span>
+              <span class="tag">Hibernate 6</span>
+              <span class="tag">JUnit 5</span>
+              <span class="tag">Mockito</span>
+              <span class="tag">Swagger / OpenAPI</span>
+              <span class="tag">Maven</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/matipirro/taskmanager" target="_blank" rel="noopener" class="btn btn-accent-sm">
+                <i class="fa-brands fa-github"></i> Ver en GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- Proyecto RoomReady -->
       <div class="project-card">
         <div class="row g-4 align-items-center">

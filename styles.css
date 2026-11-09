@@ -40,8 +40,9 @@
 
 html { scroll-behavior: smooth; }
 
-/* Compensa el navbar sticky al saltar a una sección por anchor */
-section[id] { scroll-margin-top: 90px; }
+/* Compensa el navbar sticky al saltar a una sección por anchor.
+   Ajustado a la altura real del pill (~78px desktop, ~84px mobile). */
+section[id] { scroll-margin-top: 64px; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -446,7 +447,7 @@ html.menu-open body { overflow: hidden; }
    SECTIONS
    ===================================================================== */
 .section {
-  padding: 120px 0;
+  padding: 48px 0 120px;
   position: relative;
   z-index: 1;
 }
@@ -1013,11 +1014,16 @@ html.menu-open body { overflow: hidden; }
   .hero-location { justify-content: center; }
   .hero-photo-wrapper { max-width: 260px; margin: 0 auto; }
 
-  .section { padding: 80px 0; }
+  .section { padding: 48px 0 80px; }
   .project-card { padding: 24px; }
   .project-image { aspect-ratio: auto; height: 140px; font-size: 3.5rem; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .stat { padding: 22px 12px; }
+}
+
+@media (max-width: 767px) {
+  .section { padding-top: 24px; }
+  section[id] { scroll-margin-top: 72px; }
 }
 
 @media (max-width: 576px) {

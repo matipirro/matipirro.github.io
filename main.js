@@ -149,4 +149,34 @@
       if (next) { e.preventDefault(); selectTab(next, true); }
     });
   });
+
+  /* ---------- FAQ acordeón ---------- */
+  // Son <button>, así que Enter y Space funcionan de forma nativa.
+  document.querySelectorAll('.faq-trigger').forEach(function (trigger) {
+    trigger.addEventListener('click', function () {
+      var item = trigger.closest('.faq-item');
+      var open = !item.classList.contains('is-open');
+      item.classList.toggle('is-open', open);
+      trigger.setAttribute('aria-expanded', String(open));
+    });
+  });
+
+  /* ---------- Fade-in de secciones al hacer scroll ---------- */
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if ('IntersectionObserver' in window && !reduceMotion) {
+    var targets = document.querySelectorAll('.stats-banner .container, .section > .container');
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+
+    targets.forEach(function (el) {
+      el.classList.add('reveal');
+      observer.observe(el);
+    });
+  }
 })();

@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Matías Pirrone Bruni - Programador Junior especializado en Java, Backend y desarrollo asistido por IA. Certificado en Claude Code por Anthropic. Buscando primeras oportunidades en Madrid." />
+  <meta name="description" content="Matías Pirrone Bruni - Programador Junior especializado en Java, Python, Backend y desarrollo asistido por IA. Certificado en Claude Code por Anthropic. Buscando primeras oportunidades en Madrid." />
   <meta name="author" content="Matías Pirrone Bruni" />
-  <meta name="keywords" content="Programador Junior, Java, Android, Backend, Claude Code, IA, Madrid, DAM, MySQL, Linux" />
+  <meta name="keywords" content="Programador Junior, Java, Spring Boot, Python, FastAPI, Backend, RAG, Claude Code, IA, Madrid, DAM, MySQL, Linux" />
 
   <!-- Open Graph (para cuando compartas la URL) -->
   <meta property="og:title" content="Matías Pirrone Bruni - Programador Junior" />
-  <meta property="og:description" content="Java · Backend · MySQL · Linux · Desarrollo asistido por IA (Claude Code)" />
+  <meta property="og:description" content="Java · Python · Backend · MySQL · Linux · Desarrollo asistido por IA (Claude Code)" />
   <meta property="og:type" content="website" />
 
   <title>Matías Pirrone Bruni - Programador Junior</title>
@@ -86,7 +86,7 @@
             Matías Pirrone Bruni
           </h1>
           <p class="hero-subtitle">
-            Programador Junior · Java · Android · Backend · MySQL · Linux
+            Programador Junior · Java · Python · Backend · MySQL · Linux
           </p>
           <p class="hero-tagline">
             Certificado en Claude Code por Anthropic — aplicando IA como amplificador de productividad en desarrollo.
@@ -136,6 +136,9 @@
             Estoy <strong>certificado en Claude Code in Action por Anthropic</strong> y utilizo la IA como amplificador de productividad en mi día a día: hooks personalizados, integración de MCPs y construcción de agentes con el Claude Agent SDK. Creo firmemente que el desarrollo moderno consiste en combinar el criterio humano con la capacidad de la IA, y en aprender rápido cuando el proyecto lo requiere.
           </p>
           <p class="lead-text">
+            Mi base principal es <strong>Java con Spring Boot</strong>. También trabajo con <strong>Python y FastAPI</strong> para proyectos con integración directa a LLMs.
+          </p>
+          <p class="lead-text">
             Busco mi primera oportunidad profesional como <strong>desarrollador backend, junior full-stack o consultor IT junior con foco en IA</strong> en la Comunidad de Madrid. Estoy abierto a modalidad presencial, híbrida o remota.
           </p>
         </div>
@@ -172,6 +175,7 @@
             <div class="skill-tags">
               <span class="tag">Java</span>
               <span class="tag">SQL</span>
+              <span class="tag">Python</span>
               <span class="tag">HTML5</span>
               <span class="tag">CSS3</span>
               <span class="tag">JavaScript</span>
@@ -261,7 +265,45 @@
         <span class="accent">03.</span> Proyectos
       </h2>
 
-      <!-- Proyecto Task Manager API Python (NUEVO - destacado) -->
+      <!-- Proyecto rag-aws-notes (destacado) -->
+      <div class="project-card">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-5">
+            <div class="project-image project-image-alt">
+              <i class="fa-solid fa-magnifying-glass-chart"></i>
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <p class="project-label">Proyecto individual · Noviembre 2026</p>
+            <h3 class="project-title">rag-aws-notes · Python + ChromaDB + Claude API</h3>
+            <p class="project-subtitle">Mini-RAG sobre apuntes de AWS Cloud Practitioner con búsqueda semántica local y Claude para generar respuestas</p>
+            <p class="project-description">
+              Pipeline completa de Retrieval-Augmented Generation construida sobre mis propios apuntes del curso AWS Cloud Practitioner. Ingesta por secciones H2/H3 con ventanas de 100 tokens y solape, embeddings multilingües con sentence-transformers, persistencia local en ChromaDB con distancia coseno, y generación con Claude Sonnet 5.5 citando la sección de origen de cada chunk.
+            </p>
+            <p class="project-role">
+              <strong>Diseño robusto:</strong> cuando el contexto recuperado no cubre la pregunta, el sistema lo dice en vez de inventar. CLI, API FastAPI con endpoint <code>GET /ask</code>, y README con arquitectura, 9 casos reales de troubleshooting documentados y ejemplo de output.
+            </p>
+            <div class="project-tech">
+              <span class="tag tag-accent">Python 3.14</span>
+              <span class="tag tag-accent">ChromaDB</span>
+              <span class="tag tag-accent">sentence-transformers</span>
+              <span class="tag tag-accent">Anthropic SDK</span>
+              <span class="tag">claude-sonnet-5-5</span>
+              <span class="tag">FastAPI</span>
+              <span class="tag">RAG</span>
+              <span class="tag">Vector Database</span>
+              <span class="tag">Prompt Engineering</span>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/matipirro/rag-aws-notes" target="_blank" rel="noopener" class="btn btn-accent-sm">
+                <i class="fa-brands fa-github"></i> Ver en GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Proyecto Task Manager API Python -->
       <div class="project-card">
         <div class="row g-4 align-items-center">
           <div class="col-lg-5">
@@ -387,7 +429,7 @@
               Formación completa sobre integración de IA en el flujo de desarrollo con Claude Code (CLI), MCPs (Model Context Protocol) y el Claude Agent SDK. Configuración de hooks personalizados (PreToolUse/PostToolUse), buenas prácticas de seguridad (gestión de permisos, denegación de rutas sensibles) y construcción de agentes propios.
             </p>
             <p class="project-role">
-              <strong>Aplicación práctica:</strong> uso Claude Code como amplificador de productividad en mi desarrollo diario, permitiéndome iterar rápido y aprender nuevas tecnologías con velocidad mucho mayor.
+              <strong>Aplicación práctica:</strong> uso Claude Code como amplificador de productividad en mi desarrollo diario para iterar rápido, siempre con revisión y criterio propio sobre cada cambio.
             </p>
             <div class="project-tech">
               <span class="tag tag-accent">Claude Code</span>
@@ -413,6 +455,18 @@
       </h2>
 
       <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <p class="timeline-date">En curso</p>
+            <h3 class="timeline-title">AWS Cloud Practitioner Essentials</h3>
+            <p class="timeline-org">AWS Skill Builder</p>
+            <p class="timeline-description">
+              Formación oficial en servicios de cómputo (EC2, Lambda, ECS/Fargate), almacenamiento, red, seguridad y modelo de responsabilidad compartida. Apuntes propios indexados en el proyecto rag-aws-notes.
+            </p>
+          </div>
+        </div>
+
         <div class="timeline-item">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
@@ -466,11 +520,11 @@
         <div class="timeline-item">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <p class="timeline-date">Marzo — Junio 2024</p>
-            <h3 class="timeline-title">Prácticas profesionales · Desarrollo Java</h3>
-            <p class="timeline-org">Gomez Group Metering · Madrid</p>
+            <p class="timeline-date">Abril — Mayo 2026</p>
+            <h3 class="timeline-title">Personal de Acreditaciones y Atención al Público</h3>
+            <p class="timeline-org">Adecco (cliente: Mutua Madrid Open)</p>
             <p class="timeline-description">
-              Prácticas del ciclo DAM en un entorno de desarrollo Java real. Colaboración en proyectos internos aplicando lo aprendido en formación y adquiriendo experiencia en el flujo de trabajo profesional.
+              Control de accesos y validación de acreditaciones en el torneo ATP/WTA Mutua Madrid Open, con afluencia superior a 250.000 asistentes. Atención directa al público nacional e internacional en inglés y español, gestión de incidencias y colas en jornadas de alta afluencia.
             </p>
           </div>
         </div>
@@ -478,11 +532,35 @@
         <div class="timeline-item">
           <div class="timeline-marker"></div>
           <div class="timeline-content">
-            <p class="timeline-date">Anual</p>
-            <h3 class="timeline-title">Personal de servicio · Mutua Madrid Open</h3>
-            <p class="timeline-org">Torneo ATP · Madrid</p>
+            <p class="timeline-date">Junio — Agosto 2024</p>
+            <h3 class="timeline-title">Dependiente de Tienda</h3>
+            <p class="timeline-org">Lefties (Inditex) · Madrid</p>
             <p class="timeline-description">
-              Colaboración en el mayor evento tenístico de la ciudad. Trabajo en equipo, atención al público y capacidad de respuesta bajo presión.
+              Operación y asistencia técnica de cajas automáticas durante la implantación del nuevo sistema de autocobro: diagnóstico de incidencias, resolución directa y escalado al equipo cuando era necesario. Formación práctica a clientes con poca familiaridad tecnológica (especialmente personas mayores) en el uso de las cajas automáticas.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <p class="timeline-date">Marzo — Junio 2024</p>
+            <h3 class="timeline-title">Prácticas profesionales · Desarrollo Java</h3>
+            <p class="timeline-org">Gomez Group Metering · Madrid</p>
+            <p class="timeline-description">
+              Prácticas del ciclo DAM participando en el proyecto interno de migración de la base de datos corporativa a Microsoft Azure. Desarrollo de una aplicación web interna del directorio corporativo desplegada en producción.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <p class="timeline-date">Septiembre — Noviembre 2020</p>
+            <h3 class="timeline-title">Técnico de Soporte Informático · Prácticas SMR</h3>
+            <p class="timeline-org">Imager Informática S.L. · Leganés, Madrid</p>
+            <p class="timeline-description">
+              Atención presencial a clientes y pequeñas empresas: diagnóstico, montaje, mantenimiento y reparación de equipos informáticos. Gestión de órdenes de reparación.
             </p>
           </div>
         </div>

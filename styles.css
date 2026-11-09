@@ -40,6 +40,13 @@
 
 html { scroll-behavior: smooth; }
 
+/* Compensa el navbar sticky al saltar a una sección por anchor */
+section[id] { scroll-margin-top: 90px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
 body {
   font-family: var(--font-sans);
   background: var(--bg);
@@ -156,6 +163,92 @@ a:hover { color: var(--accent); }
 
 .navbar-toggler-icon {
   filter: invert(1) brightness(0.9);
+}
+
+.navbar-toggler:focus { box-shadow: 0 0 0 2px var(--accent); }
+
+/* =====================================================================
+   MENÚ MOBILE — overlay full-screen
+   ===================================================================== */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(8, 8, 8, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px 40px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s ease, visibility 0s linear .3s;
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity .3s ease, visibility 0s linear 0s;
+}
+
+.mobile-menu-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  padding: 10px 18px;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s ease, border-color .2s ease;
+}
+.mobile-menu-close i { font-size: 1.1rem; }
+.mobile-menu-close:hover { background: var(--surface-hover); border-color: rgba(255,255,255,0.3); }
+.mobile-menu-close:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+.mobile-menu-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.mobile-menu-nav a {
+  font-size: clamp(1.75rem, 8vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  padding: 8px 20px;
+  border-radius: var(--radius-md);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .35s ease, transform .35s ease, color .2s ease;
+}
+.mobile-menu-nav a:hover,
+.mobile-menu-nav a:focus-visible { color: var(--accent); outline: none; }
+
+.mobile-menu.is-open .mobile-menu-nav a { opacity: 1; transform: none; }
+.mobile-menu.is-open .mobile-menu-nav a:nth-child(2) { transition-delay: .04s, .04s, 0s; }
+.mobile-menu.is-open .mobile-menu-nav a:nth-child(3) { transition-delay: .08s, .08s, 0s; }
+.mobile-menu.is-open .mobile-menu-nav a:nth-child(4) { transition-delay: .12s, .12s, 0s; }
+.mobile-menu.is-open .mobile-menu-nav a:nth-child(5) { transition-delay: .16s, .16s, 0s; }
+.mobile-menu.is-open .mobile-menu-nav a:nth-child(6) { transition-delay: .20s, .20s, 0s; }
+
+/* Bloqueo del scroll de fondo mientras el overlay está abierto */
+html.menu-open,
+html.menu-open body { overflow: hidden; }
+
+@media (min-width: 992px) {
+  .mobile-menu { display: none; }
 }
 
 /* =====================================================================
@@ -735,13 +828,8 @@ a:hover { color: var(--accent); }
     border-radius: var(--radius-lg);
     padding: 12px 20px !important;
   }
+  .navbar > .container { justify-content: space-between; }
   .navbar-brand { border-right: none; margin-right: 0; padding-right: 0; }
-  .navbar-nav {
-    padding-top: 12px;
-    gap: 4px;
-    border-top: 1px solid var(--border);
-    margin-top: 12px;
-  }
 
   /* Hero en tablet/mobile: todo centrado tipo UDIA */
   .hero-section { min-height: auto; padding: 40px 0 80px; text-align: center; }

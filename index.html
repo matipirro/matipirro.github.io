@@ -120,6 +120,20 @@
   </section>
 
   <!-- ============================================================ -->
+  <!-- STATS                                                        -->
+  <!-- ============================================================ -->
+  <section class="stats-banner" aria-label="En cifras">
+    <div class="container">
+      <ul class="stats-grid">
+        <li class="stat"><span class="stat-number">4</span><span class="stat-label">proyectos técnicos en GitHub</span></li>
+        <li class="stat"><span class="stat-number">3</span><span class="stat-label">certificaciones y titulaciones FP</span></li>
+        <li class="stat"><span class="stat-number">2</span><span class="stat-label">APIs REST con tests automatizados</span></li>
+        <li class="stat"><span class="stat-number">1</span><span class="stat-label">VPS Linux propio en producción</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================================================ -->
   <!-- SOBRE MÍ                                                     -->
   <!-- ============================================================ -->
   <section id="sobre-mi" class="section">
@@ -265,8 +279,18 @@
         <span class="accent">03.</span> Proyectos
       </h2>
 
+      <!-- Filtro por categoría -->
+      <div class="project-tabs" role="tablist" aria-label="Filtrar proyectos por categoría">
+        <button type="button" class="project-tab is-active" role="tab" id="tab-all" aria-selected="true" aria-controls="projectList" data-filter="all">Todos</button>
+        <button type="button" class="project-tab" role="tab" id="tab-backend" aria-selected="false" aria-controls="projectList" data-filter="backend" tabindex="-1">Backend</button>
+        <button type="button" class="project-tab" role="tab" id="tab-ai" aria-selected="false" aria-controls="projectList" data-filter="ai" tabindex="-1">AI / RAG</button>
+        <button type="button" class="project-tab" role="tab" id="tab-mobile" aria-selected="false" aria-controls="projectList" data-filter="mobile" tabindex="-1">Móvil</button>
+      </div>
+
+      <div class="project-list" id="projectList" role="tabpanel" aria-labelledby="tab-all">
+
       <!-- Proyecto rag-aws-notes (destacado) -->
-      <div class="project-card">
+      <div class="project-card" data-category="ai">
         <div class="row g-4 align-items-center">
           <div class="col-lg-5">
             <div class="project-image project-image-alt">
@@ -277,12 +301,16 @@
             <p class="project-label">Proyecto individual · Noviembre 2026</p>
             <h3 class="project-title">rag-aws-notes · Python + ChromaDB + Claude API</h3>
             <p class="project-subtitle">Mini-RAG sobre apuntes de AWS Cloud Practitioner con búsqueda semántica local y Claude para generar respuestas</p>
-            <p class="project-description">
-              Pipeline completa de Retrieval-Augmented Generation construida sobre mis propios apuntes del curso AWS Cloud Practitioner. Ingesta por secciones H2/H3 con ventanas de 100 tokens y solape, embeddings multilingües con sentence-transformers, persistencia local en ChromaDB con distancia coseno, y generación con Claude Sonnet 5.5 citando la sección de origen de cada chunk.
-            </p>
-            <p class="project-role">
-              <strong>Diseño robusto:</strong> cuando el contexto recuperado no cubre la pregunta, el sistema lo dice en vez de inventar. CLI, API FastAPI con endpoint <code>GET /ask</code>, y README con arquitectura, 9 casos reales de troubleshooting documentados y ejemplo de output.
-            </p>
+            <div class="project-details" id="project-details-1">
+              <div class="project-details-inner">
+                <p class="project-description">
+                  Pipeline completa de Retrieval-Augmented Generation construida sobre mis propios apuntes del curso AWS Cloud Practitioner. Ingesta por secciones H2/H3 con ventanas de 100 tokens y solape, embeddings multilingües con sentence-transformers, persistencia local en ChromaDB con distancia coseno, y generación con Claude Sonnet 5.5 citando la sección de origen de cada chunk.
+                </p>
+                <p class="project-role">
+                  <strong>Diseño robusto:</strong> cuando el contexto recuperado no cubre la pregunta, el sistema lo dice en vez de inventar. CLI, API FastAPI con endpoint <code>GET /ask</code>, y README con arquitectura, 9 casos reales de troubleshooting documentados y ejemplo de output.
+                </p>
+              </div>
+            </div>
             <div class="project-tech">
               <span class="tag tag-accent">Python 3.14</span>
               <span class="tag tag-accent">ChromaDB</span>
@@ -295,6 +323,9 @@
               <span class="tag">Prompt Engineering</span>
             </div>
             <div class="project-links">
+              <button type="button" class="btn-details" aria-expanded="false" aria-controls="project-details-1">
+                <span class="btn-details-text">Ver detalles</span> <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+              </button>
               <a href="https://github.com/matipirro/rag-aws-notes" target="_blank" rel="noopener" class="btn btn-accent-sm">
                 <i class="fa-brands fa-github"></i> Ver en GitHub
               </a>
@@ -304,7 +335,7 @@
       </div>
 
       <!-- Proyecto Task Manager API Python -->
-      <div class="project-card">
+      <div class="project-card" data-category="backend ai">
         <div class="row g-4 align-items-center">
           <div class="col-lg-5">
             <div class="project-image project-image-alt">
@@ -315,12 +346,16 @@
             <p class="project-label">Proyecto individual · Octubre 2026</p>
             <h3 class="project-title">Task Manager API · Python + Claude AI</h3>
             <p class="project-subtitle">REST API con FastAPI, PostgreSQL dockerizado, CI/CD y endpoint integrado con la API de Anthropic</p>
-            <p class="project-description">
-              API REST completa en Python 3.14 construida con FastAPI y arquitectura en capas (endpoints, repository, models, infraestructura) siguiendo principios SOLID. Persistencia con SQLAlchemy 2.0 en modo dual: PostgreSQL 16 dockerizado o SQLite para desarrollo local, siguiendo 12-Factor App. Containerización con Dockerfile + docker-compose y pipeline CI/CD en GitHub Actions con badge en el README.
-            </p>
-            <p class="project-role">
-              <strong>Integración de IA en producción:</strong> endpoint <code>POST /tasks/{id}/suggest</code> que invoca Claude Haiku 4.5 vía Anthropic SDK para generar subtareas automáticamente, con manejo de errores y tests mockeados para no consumir tokens en CI. 22 tests automatizados con pytest, TestClient y unittest.mock cubriendo CRUD, códigos de error y test end-to-end.
-            </p>
+            <div class="project-details" id="project-details-2">
+              <div class="project-details-inner">
+                <p class="project-description">
+                  API REST completa en Python 3.14 construida con FastAPI y arquitectura en capas (endpoints, repository, models, infraestructura) siguiendo principios SOLID. Persistencia con SQLAlchemy 2.0 en modo dual: PostgreSQL 16 dockerizado o SQLite para desarrollo local, siguiendo 12-Factor App. Containerización con Dockerfile + docker-compose y pipeline CI/CD en GitHub Actions con badge en el README.
+                </p>
+                <p class="project-role">
+                  <strong>Integración de IA en producción:</strong> endpoint <code>POST /tasks/{id}/suggest</code> que invoca Claude Haiku 4.5 vía Anthropic SDK para generar subtareas automáticamente, con manejo de errores y tests mockeados para no consumir tokens en CI. 22 tests automatizados con pytest, TestClient y unittest.mock cubriendo CRUD, códigos de error y test end-to-end.
+                </p>
+              </div>
+            </div>
             <div class="project-tech">
               <span class="tag tag-accent">Python 3.14</span>
               <span class="tag tag-accent">FastAPI</span>
@@ -332,6 +367,9 @@
               <span class="tag">Pytest</span>
             </div>
             <div class="project-links">
+              <button type="button" class="btn-details" aria-expanded="false" aria-controls="project-details-2">
+                <span class="btn-details-text">Ver detalles</span> <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+              </button>
               <a href="https://github.com/matipirro/taskmanager-python" target="_blank" rel="noopener" class="btn btn-accent-sm">
                 <i class="fa-brands fa-github"></i> Ver en GitHub
               </a>
@@ -341,7 +379,7 @@
       </div>
 
       <!-- Proyecto Task Manager Java Spring Boot (NUEVO) -->
-      <div class="project-card">
+      <div class="project-card" data-category="backend">
         <div class="row g-4 align-items-center">
           <div class="col-lg-5">
             <div class="project-image">
@@ -352,12 +390,16 @@
             <p class="project-label">Proyecto individual · Julio 2026</p>
             <h3 class="project-title">Task Manager API · Spring Boot</h3>
             <p class="project-subtitle">REST API con Spring Boot 3.5, Java 21 y suite de tests JUnit + Mockito</p>
-            <p class="project-description">
-              API REST end-to-end construida con Spring Boot 3.5 y Java 21 siguiendo el patrón estándar en capas (entity, repository, service, controller). CRUD completo con códigos HTTP semánticamente correctos (200, 201, 204, 404), serialización JSON con Jackson, capa de servicios, excepciones personalizadas, manejo centralizado con <code>@RestControllerAdvice</code> y documentación interactiva con Swagger / OpenAPI.
-            </p>
-            <p class="project-role">
-              <strong>Testing profesional:</strong> 15 tests unitarios e integración con JUnit 5, Mockito, AssertJ y MockMvc (<code>@WebMvcTest</code>). Separación clara entre tests de controlador y de servicio para probar cada capa de forma aislada.
-            </p>
+            <div class="project-details" id="project-details-3">
+              <div class="project-details-inner">
+                <p class="project-description">
+                  API REST end-to-end construida con Spring Boot 3.5 y Java 21 siguiendo el patrón estándar en capas (entity, repository, service, controller). CRUD completo con códigos HTTP semánticamente correctos (200, 201, 204, 404), serialización JSON con Jackson, capa de servicios, excepciones personalizadas, manejo centralizado con <code>@RestControllerAdvice</code> y documentación interactiva con Swagger / OpenAPI.
+                </p>
+                <p class="project-role">
+                  <strong>Testing profesional:</strong> 15 tests unitarios e integración con JUnit 5, Mockito, AssertJ y MockMvc (<code>@WebMvcTest</code>). Separación clara entre tests de controlador y de servicio para probar cada capa de forma aislada.
+                </p>
+              </div>
+            </div>
             <div class="project-tech">
               <span class="tag">Java 21</span>
               <span class="tag">Spring Boot 3.5</span>
@@ -369,6 +411,9 @@
               <span class="tag">Maven</span>
             </div>
             <div class="project-links">
+              <button type="button" class="btn-details" aria-expanded="false" aria-controls="project-details-3">
+                <span class="btn-details-text">Ver detalles</span> <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+              </button>
               <a href="https://github.com/matipirro/taskmanager" target="_blank" rel="noopener" class="btn btn-accent-sm">
                 <i class="fa-brands fa-github"></i> Ver en GitHub
               </a>
@@ -378,7 +423,7 @@
       </div>
 
       <!-- Proyecto RoomReady -->
-      <div class="project-card">
+      <div class="project-card" data-category="mobile">
         <div class="row g-4 align-items-center">
           <div class="col-lg-5">
             <div class="project-image">
@@ -389,12 +434,16 @@
             <p class="project-label">Trabajo Fin de Grado · Junio 2024</p>
             <h3 class="project-title">RoomReady</h3>
             <p class="project-subtitle">Aplicación Android nativa para reserva de hoteles</p>
-            <p class="project-description">
-              App móvil completa desarrollada extremo a extremo como TFG del ciclo DAM. Tres tipos de usuario (invitado, cliente, director) con funcionalidades diferenciadas. Backend Java conectado por JDBC a MySQL sobre servidor Linux propio en OVH con SSH, UFW, Fail2Ban y notificaciones Pushover para accesos.
-            </p>
-            <p class="project-role">
-              <strong>Mi rol:</strong> responsable principal del sistema de favoritos end-to-end (modelo, JDBC, adapter, fragment) y de la vista de detalle de hotel. Colaboración con Alejandro Berzal y Borja Gavilán bajo metodología Scrum. Cumplimiento GDPR y AEPD.
-            </p>
+            <div class="project-details" id="project-details-4">
+              <div class="project-details-inner">
+                <p class="project-description">
+                  App móvil completa desarrollada extremo a extremo como TFG del ciclo DAM. Tres tipos de usuario (invitado, cliente, director) con funcionalidades diferenciadas. Backend Java conectado por JDBC a MySQL sobre servidor Linux propio en OVH con SSH, UFW, Fail2Ban y notificaciones Pushover para accesos.
+                </p>
+                <p class="project-role">
+                  <strong>Mi rol:</strong> responsable principal del sistema de favoritos end-to-end (modelo, JDBC, adapter, fragment) y de la vista de detalle de hotel. Colaboración con Alejandro Berzal y Borja Gavilán bajo metodología Scrum. Cumplimiento GDPR y AEPD.
+                </p>
+              </div>
+            </div>
             <div class="project-tech">
               <span class="tag">Java</span>
               <span class="tag">Android</span>
@@ -405,6 +454,9 @@
               <span class="tag">Scrum</span>
             </div>
             <div class="project-links">
+              <button type="button" class="btn-details" aria-expanded="false" aria-controls="project-details-4">
+                <span class="btn-details-text">Ver detalles</span> <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+              </button>
               <a href="https://github.com/matipirro/roomready" target="_blank" rel="noopener" class="btn btn-accent-sm">
                 <i class="fa-brands fa-github"></i> Ver en GitHub
               </a>
@@ -414,7 +466,7 @@
       </div>
 
       <!-- Proyecto Claude Code -->
-      <div class="project-card">
+      <div class="project-card" data-category="always">
         <div class="row g-4 align-items-center">
           <div class="col-lg-5">
             <div class="project-image project-image-alt">
@@ -425,12 +477,16 @@
             <p class="project-label">Certificación · Junio 2026</p>
             <h3 class="project-title">Claude Code in Action</h3>
             <p class="project-subtitle">Curso oficial de Anthropic sobre desarrollo asistido por IA</p>
-            <p class="project-description">
-              Formación completa sobre integración de IA en el flujo de desarrollo con Claude Code (CLI), MCPs (Model Context Protocol) y el Claude Agent SDK. Configuración de hooks personalizados (PreToolUse/PostToolUse), buenas prácticas de seguridad (gestión de permisos, denegación de rutas sensibles) y construcción de agentes propios.
-            </p>
-            <p class="project-role">
-              <strong>Aplicación práctica:</strong> uso Claude Code como amplificador de productividad en mi desarrollo diario para iterar rápido, siempre con revisión y criterio propio sobre cada cambio.
-            </p>
+            <div class="project-details" id="project-details-5">
+              <div class="project-details-inner">
+                <p class="project-description">
+                  Formación completa sobre integración de IA en el flujo de desarrollo con Claude Code (CLI), MCPs (Model Context Protocol) y el Claude Agent SDK. Configuración de hooks personalizados (PreToolUse/PostToolUse), buenas prácticas de seguridad (gestión de permisos, denegación de rutas sensibles) y construcción de agentes propios.
+                </p>
+                <p class="project-role">
+                  <strong>Aplicación práctica:</strong> uso Claude Code como amplificador de productividad en mi desarrollo diario para iterar rápido, siempre con revisión y criterio propio sobre cada cambio.
+                </p>
+              </div>
+            </div>
             <div class="project-tech">
               <span class="tag tag-accent">Claude Code</span>
               <span class="tag tag-accent">MCPs</span>
@@ -438,9 +494,16 @@
               <span class="tag">Node.js</span>
               <span class="tag">CLI</span>
             </div>
+            <div class="project-links">
+              <button type="button" class="btn-details" aria-expanded="false" aria-controls="project-details-5">
+                <span class="btn-details-text">Ver detalles</span> <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
+
+      </div><!-- /.project-list -->
 
     </div>
   </section>

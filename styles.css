@@ -693,6 +693,135 @@ html.menu-open body { overflow: hidden; }
   flex-wrap: wrap;
 }
 
+/* ---------- Tabs de filtro ---------- */
+.project-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.project-tab {
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  padding: 8px 18px;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.project-tab:hover { color: var(--text); background: rgba(255,255,255,0.05); }
+.project-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.project-tab.is-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+  box-shadow: 0 6px 18px var(--accent-glow);
+}
+
+/* Fade al filtrar */
+.project-card {
+  transition: border-color .25s ease, box-shadow .25s ease, background .25s ease,
+              opacity .25s ease, transform .25s ease;
+}
+.project-card.is-fading { opacity: 0; transform: translateY(8px); }
+.project-card.is-hidden { display: none; }
+
+/* ---------- Cards expandibles ---------- */
+.project-card[data-category] { cursor: pointer; }
+
+.project-card.is-expanded {
+  border-color: rgba(37,99,235,0.55);
+  background: linear-gradient(135deg, var(--surface) 0%, rgba(37,99,235,0.06) 100%);
+  box-shadow: 0 20px 60px rgba(37,99,235,0.12);
+}
+
+.project-details {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows .35s ease;
+}
+.project-details-inner {
+  min-height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  transition: visibility 0s linear .35s;
+}
+.project-card.is-expanded .project-details { grid-template-rows: 1fr; }
+.project-card.is-expanded .project-details-inner {
+  visibility: visible;
+  transition: visibility 0s linear 0s;
+}
+.project-details-inner > :last-child { margin-bottom: 24px; }
+
+.btn-details {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-pill);
+  padding: 8px 16px;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all .2s ease;
+}
+.btn-details:hover { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.3); }
+.btn-details:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.btn-details i { font-size: 0.75rem; transition: transform .3s ease; }
+.btn-details[aria-expanded="true"] i { transform: rotate(180deg); }
+
+/* =====================================================================
+   STATS BANNER
+   ===================================================================== */
+.stats-banner {
+  position: relative;
+  z-index: 1;
+  padding: 0 0 40px;
+}
+
+.stats-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.stat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 28px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.stat-number {
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--accent);
+}
+
+.stat-label {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  max-width: 200px;
+}
+
 /* =====================================================================
    TIMELINE (Formación y Experiencia)
    ===================================================================== */
@@ -842,6 +971,9 @@ html.menu-open body { overflow: hidden; }
 
   .section { padding: 80px 0; }
   .project-card { padding: 24px; }
+  .project-image { aspect-ratio: auto; height: 140px; font-size: 3.5rem; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .stat { padding: 22px 12px; }
   .info-card { position: static; margin-top: 32px; }
 }
 
@@ -849,6 +981,10 @@ html.menu-open body { overflow: hidden; }
   .hero-title { font-size: 2.4rem; }
   .section-title { font-size: 1.75rem; margin-bottom: 40px; }
   .project-title { font-size: 1.5rem; }
+  .project-image { height: 110px; font-size: 2.75rem; }
+  .stat-label { font-size: 0.82rem; }
+  .project-tabs { gap: 6px; }
+  .project-tab { padding: 7px 12px; font-size: 0.82rem; }
   .hero-buttons { flex-direction: column; align-items: stretch; width: 100%; }
   .hero-buttons .btn { justify-content: center; }
   .hero-buttons .btn-icon { display: none; }
